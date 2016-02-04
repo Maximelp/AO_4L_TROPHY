@@ -12,7 +12,7 @@ if($(".main-container .dsq .slides li video")){
 "use strict";
 
 $(document).ready(function() {
-
+var val;
 	$.ajax({
        url : 'http://162.243.19.27:8000/api/systems',
        type : 'GET',
@@ -20,24 +20,25 @@ $(document).ready(function() {
        dataType : 'html',
        contentType: 'image/jpeg',
        success : function(result){ // code_html contient le HTML renvoyé
-			// var json_obj = $.parseJSON(result);
-			// for (var i in json_obj) 
-   //          {
-   //              var data = json_obj[i].data;
-   //          }
-
-   //          console.log(data);
-   console.log(result);
-
-			 var res = $.parseJSON(result);
+	
+		var res = $.parseJSON(result);
 		jQuery.each(res, function(index, value){
-        console.log(value);
-    });
+         console.log(value);
+    	});
 
 
 
        }
     });
+
+
+
+
+
+
+
+
+   
 
 
 	var win_h = $(window).height(),
