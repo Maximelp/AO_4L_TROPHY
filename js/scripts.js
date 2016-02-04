@@ -20,13 +20,22 @@ $(document).ready(function() {
        dataType : 'html',
        contentType: 'image/jpeg',
        success : function(result){ // code_html contient le HTML renvoyé
-			var json_obj = $.parseJSON(result);
-			for (var i in json_obj) 
-            {
-                var data = json_obj[i]._id;
-            }
+			// var json_obj = $.parseJSON(result);
+			// for (var i in json_obj) 
+   //          {
+   //              var data = json_obj[i].data;
+   //          }
 
-            console.log(atob(data));
+   //          console.log(data);
+   console.log(result);
+
+			 var res = $.parseJSON(result);
+		jQuery.each(res, function(index, value){
+        console.log(value);
+    });
+
+
+
        }
     });
 
