@@ -474,7 +474,7 @@ Author URL: http://themeforest.net/user/codesymbol/
         background: rgba(255,255,255,0.8);
         width: 100vw;
         height:100vh;
-
+        display: none;
     }
     
     .partagedon{
@@ -487,6 +487,7 @@ Author URL: http://themeforest.net/user/codesymbol/
         margin-top: -150px;
         left: 50%;
         margin-left: -250px;
+        display: none;
      
     }
     .closewindow{
@@ -1031,11 +1032,63 @@ Author URL: http://themeforest.net/user/codesymbol/
             position: relative;
             width: 100%;
             height: 100%;
+            overflow: hidden;
         }
         .striped-slides .flexslider li {
             background-size: cover;
             background-repeat: no-repeat;
             background-position: center center;
+        }
+        #imgload{
+            width: 100%;
+            height:100%;
+        }
+
+        #overlayhome{
+            width: 100vw;
+            height:100vh;
+            position: absolute;
+            z-index: 999;
+            top:0;
+            left:0;
+            background:rgba(0,0,0,0.94);
+        }
+
+        .closeoverlay{
+          position: absolute;
+          left:50%;
+          bottom: 170px;
+          padding: 10px;
+          padding-left: 40px;
+          padding-right: 40px;
+          float: right;
+          cursor: pointer;
+          color: #FFF;
+          font-size: 12px;
+          background:transparent; 
+          border:2px solid #FFF;
+          opacity: 0;
+          transform:translate(-50%);
+          
+        }
+        .closeoverlay:hover{
+        background:rgba(255,255,255,0.1);
+        }
+
+        .textoverlay{
+            position: absolute;
+            left: 25%;
+            width: 50%;
+            font-size: 16px;
+            text-align: center;
+            bottom:350px;
+            opacity: 0;
+        }
+        .textoverlay span{
+            display: block;
+            margin-bottom: 20px;
+            font-size: 18px;
+            color: #FFF;
         }
 
         #pub1{
@@ -1046,6 +1099,23 @@ Author URL: http://themeforest.net/user/codesymbol/
             margin-top: -7%;
             height:115%;
         }
+        #pub3{
+            margin-top: -7%;
+            height:115%;
+        }
+
+        .spanrs img{
+            width:25px;
+            height:25px;
+            opacity: 0.5;
+            transition:all ease .5s;
+        }
+        .spanrs img:hover{
+            width:25px;
+            height:25px;
+            opacity: 1;
+        }
+
         .striped-slides .col .overlay {
             background-color: #ffffff;
             opacity: 0.7;
@@ -1355,6 +1425,48 @@ Author URL: http://themeforest.net/user/codesymbol/
             border-radius: 50%;
             margin-bottom: 30px;
             background-color: #7C7C7C;
+        }
+        #spanvideo{
+            background-color: #FFF;
+            border:2px solid #000;
+        }
+
+        .progressvideo{
+            position: absolute;
+            z-index: 99;
+            width: 98%;
+            left: 1%;
+            height:10px;
+            bottom:10px;
+            background:rgba(0,0,0,0.6);
+        }
+
+        #progress1{
+            position: absolute;
+            z-index: 999;
+            display: block;
+            width: 0%;
+            height:10px;
+            bottom:-20px;
+            background:#FFF;
+        }
+        #progress2{
+            position: absolute;
+            z-index: 999;
+            display: block;
+            width: 0%;
+            height:10px;
+            bottom:-20px;
+            background:#FFF;
+        }
+        #progress3{
+            position: absolute;
+            z-index: 999;
+            display: block;
+            width: 0%;
+            height:10px;
+            bottom:-20px;
+            background:#FFF;
         }
         .full-screen.flexslider.vertical-nav .nav .bullets a.active, .full-screen.flexslider.vertical-nav .nav .bullets a:hover {
             background-color: #000000;

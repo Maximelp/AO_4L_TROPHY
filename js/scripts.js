@@ -20,6 +20,7 @@ var val;
        dataType : 'html',
        contentType: 'image/jpeg',
        success : function(result){ // code_html contient le HTML renvoyé
+<<<<<<< Updated upstream
 	
 		var res = $.parseJSON(result);
 		jQuery.each(res, function(index, value){
@@ -28,6 +29,51 @@ var val;
 
 
 
+=======
+			var json_obj = $.parseJSON(result);
+			var data = []; 
+			for (var i in json_obj) 
+            {
+                data[i] = json_obj[i].data;
+               	
+            }
+           
+            $('#img1').html('<img id="imgload" src="'+data[0]+'"/>');
+            $('#span1').html('<img id="imgload" src="'+data[0]+'"/>');
+
+            $('#img2').html('<img id="imgload" src="'+data[1]+'"/>');
+            $('#span2').html('<img id="imgload" src="'+data[1]+'"/>');
+
+            $('#img3').html('<img id="imgload" src="'+data[2]+'"/>');
+            $('#span3').html('<img id="imgload" src="'+data[2]+'"/>');
+
+            $('#img4').html('<img id="imgload" src="'+data[3]+'"/>');
+            $('#span4').html('<img id="imgload" src="'+data[3]+'"/>');
+
+            $('#img5').html('<img id="imgload" src="'+data[4]+'"/>');
+            $('#span5').html('<img id="imgload" src="'+data[4]+'"/>');
+
+            $('#img6').html('<img id="imgload" src="'+data[5]+'"/>');
+            $('#span6').html('<img id="imgload" src="'+data[5]+'"/>');
+
+            $('#img7').html('<img id="imgload" src="'+data[6]+'"/>');
+            $('#span7').html('<img id="imgload" src="'+data[6]+'"/>');
+
+            $('#img8').html('<img id="imgload" src="'+data[7]+'"/>');
+            $('#span8').html('<img id="imgload" src="'+data[7]+'"/>');
+
+            $('#img9').html('<img id="imgload" src="'+data[8]+'"/>');
+            $('#span9').html('<img id="imgload" src="'+data[8]+'"/>');
+
+            $('#img10').html('<img id="imgload" src="'+data[9]+'"/>');
+            $('#span10').html('<img id="imgload" src="'+data[9]+'"/>');
+
+            $('#img11').html('<img id="imgload" src="'+data[10]+'"/>');
+            $('#span11').html('<img id="imgload" src="'+data[10]+'"/>');
+
+            $('#img12').html('<img id="imgload" src="'+data[11]+'"/>');
+            $('#span12').html('<img id="imgload" src="'+data[11]+'"/>');
+>>>>>>> Stashed changes
        }
     });
 
@@ -156,7 +202,9 @@ var val;
 
 					var gallery_v_h_slideshow_speed = 5000,
 						gallery_v_h_animation_speed = 1000,
-						i_slide = 1;
+						i_slide = 1,
+						i_don =0;
+
 
 						$('.bul1').click(function(){
 							i_slide = 0;
@@ -165,14 +213,16 @@ var val;
 						$('.bul2').click(function(){
 							i_slide = 1;
 							refreshvideo();
+
 						});
 						$('.bul3').click(function(){
 							i_slide = 2;
-							hidecontrol();
+							refreshvideo();
 						});
 						$('.bul4').click(function(){
 							i_slide = 3;
-							refreshvideo();
+							hidecontrol();
+							i_don = i_don + 0.32;
 						});
 						$('.bul5').click(function(){
 							i_slide = 4;
@@ -184,18 +234,44 @@ var val;
 						});
 						$('.bul7').click(function(){
 							i_slide = 6;
-							hidecontrol();
+							refreshvideo();
 						});
 						$('.bul8').click(function(){
 							i_slide = 7;
-							refreshvideo();
+							hidecontrol();
+							i_don = i_don + 0.32;
 						});
 						$('.bul9').click(function(){
 							i_slide = 8;
 							refreshvideo();
 						});
+						$('.bul10').click(function(){
+							i_slide = 9;
+							refreshvideo();
+						});
+						$('.bul11').click(function(){
+							i_slide = 10;
+							refreshvideo();
+						});
+						$('.bul12').click(function(){
+							i_slide = 11;
+							hidecontrol();
+							i_don = i_don + 0.32;
+						});
+						$('.bul13').click(function(){
+							i_slide = 12;
+							refreshvideo();
+						});
+						$('.bul14').click(function(){
+							i_slide = 13;
+							refreshvideo();
+						});
+						$('.bul15').click(function(){
+							i_slide = 14;
+							refreshvideo();
+						});
 
-
+						
 					$(".full-screen.flexslider.vertical-nav, .full-screen.flexslider.horizontal-nav").flexslider({
 					  
 					    prevText: "",
@@ -216,20 +292,31 @@ var val;
 
 					    after: function(slider) {
 
-					    	if(i_slide == 2){
+
+					    	if(i_slide == 3){
 					    		playvideo1();
 					    		$(".full-screen.flexslider").flexslider('pause');
+					    		i_don = i_don + 0.32;
 					    		hidecontrol();
 					    	}
 
-					    	if(i_slide == 6){
+					    	if(i_slide == 7){
 					    		playvideo2();
 					    		$(".full-screen.flexslider").flexslider('pause');
+					    		i_don = i_don + 0.23;
 					    		hidecontrol();
 					    	}
 
-					    	if(i_slide == 8){
+					    	if(i_slide == 11){
+					    		playvideo3();
 					    		$(".full-screen.flexslider").flexslider('pause');
+					    		i_don = i_don + 0.37;
+					    		hidecontrol();
+					    	}
+
+					    	if(i_slide == 14){
+					    		$(".full-screen.flexslider").flexslider('pause');
+					    		alert(i_don);
 					    		setTimeout(openFbShare,10);
 					    		//$('.openfb').click();
 					    	}
@@ -238,6 +325,11 @@ var val;
 					 
 					});
 				}
+
+					$('.closeoverlay').click(function(){
+						$('#overlayhome').fadeOut(1000);
+						$(".full-screen.flexslider").flexslider('play');
+					});
 
 				function openFbShare(){
 					$('.cache_window').fadeIn(400);
@@ -276,6 +368,7 @@ var val;
 				    //function myHandler(e) {
 				    //    restartslider();
 				    //}
+				    TweenMax.to('#progress1', 30, {width:"100%"});
 				    setTimeout(restartslider,25000);
 				}
 
@@ -286,7 +379,19 @@ var val;
 				    //function myHandler(e) {
 				    //    restartslider();
 				    //}
+				    TweenMax.to('#progress2', 17, {width:"100%"});
 				    setTimeout(restartslider,12000);
+				}
+
+				function playvideo3(){
+					var video = document.getElementById("pub3");
+					video.play();
+					//video.addEventListener('ended',myHandler,false);
+				    //function myHandler(e) {
+				    //    restartslider();
+				    //}
+				    TweenMax.to('#progress3', 32, {width:"100%"});
+				    setTimeout(restartslider,27000);
 				}
 
 				function restartslider(){
@@ -1033,6 +1138,9 @@ var val;
 					    	
 							$("body > .loader").delay(1500).fadeOut(200, function() {
 					    		$("body").addClass('loaded');
+					    		$(".full-screen.flexslider").flexslider('pause');
+					    		TweenMax.to('.closeoverlay', 0.5, {bottom:"220px", opacity:"1"});
+					    		TweenMax.to('.textoverlay', 0.5, {bottom:"300px", opacity:"1"});
 					    	});
 						}
 					});
