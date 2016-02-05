@@ -20,7 +20,6 @@ var val;
        dataType : 'html',
        contentType: 'image/jpeg',
        success : function(result){ // code_html contient le HTML renvoyé
-<<<<<<< Updated upstream
 	
 		var res = $.parseJSON(result);
 		jQuery.each(res, function(index, value){
@@ -29,7 +28,7 @@ var val;
 
 
 
-=======
+
 			var json_obj = $.parseJSON(result);
 			var data = []; 
 			for (var i in json_obj) 
@@ -73,7 +72,6 @@ var val;
 
             $('#img12').html('<img id="imgload" src="'+data[11]+'"/>');
             $('#span12').html('<img id="imgload" src="'+data[11]+'"/>');
->>>>>>> Stashed changes
        }
     });
 
